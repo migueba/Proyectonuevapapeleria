@@ -1,0 +1,68 @@
+*SET STEP ON 
+SET ENGINEBEHAVIOR 70
+SET REPORTBEHAVIOR 90
+CLOSE DATABASES ALL
+CLOSE TABLES all
+PUBLIC n_acceso,nombreusuario,nombrecompleto,departamentousuario,depnombre
+
+nombreusuario = "ADMINISTRA"
+nombrecompleto = "ADMINISTRADOR"
+departamentousuario = 1
+depnombre = "SISTEMA"
+
+OPEN DATABASE \\SERVIDORP\proyectos2016$\newpapel\bdpapeleria.DBC shared
+OPEN DATABASE \\SERVIDORP\BDCOMPARTE$\COMPARTIDADB.DBC SHARED 
+OPEN DATABASE \\servidorp\nsiar$\siar.dbc SHARED 
+
+SELECT 1
+USE D:\BD\PAPELERIAN\articulos SHARED
+SELECT 2
+use \\SERVIDORP\bdcomparte$\usuarios shared
+SELECT 3
+USE \\SERVIDORP\BDCOMPARTE$\TIPO_DE_CAMBIO SHARED
+SELECT 4
+USE \\servidorp\nsiar$\proveedores SHARED
+SELECT 5
+USE D:\BD\PAPELERIAN\mes_autorizado SHARED
+SELECT 6
+USE D:\BD\PAPELERIAN\detalle_cotizacion SHARED
+*SELECT 7
+*USE \\SERVIDORP\proyectos2016$\newpapel\detalle_entrada_articulo SHARED
+*SELECT 7
+*USE \\SERVIDORP\proyectos2016$\newpapel\detalle_orden_compra SHARED
+SELECT 7
+USE D:\BD\PAPELERIAN\articulos_requisicion SHARED
+*SELECT 10
+*USE \\SERVIDORP\proyectos2016$\newpapel\entrada_articulo SHARED
+SELECT 8
+USE D:\BD\PAPELERIAN\estado_REQUISICION SHARED
+SELECT 9
+USE D:\BD\PAPELERIAN\medida SHARED
+SELECT 10
+USE D:\BD\PAPELERIAN\orden_compra SHARED
+SELECT 11
+USE D:\BD\PAPELERIAN\requisicion SHARED
+SELECT 12
+USE D:\BD\PAPELERIAN\Departamentos_usuarios SHARED
+SELECT 13
+USE D:\BD\PAPELERIAN\meses SHARED
+SELECT 14
+USE D:\BD\PAPELERIAN\observaciones SHARED
+SELECT 15
+USE D:\BD\PAPELERIAN\tipo_articulo SHARED
+SELECT 16
+USE \\SERVIDORP\BDCOMPARTE$\departamentos SHARED
+SELECT 17
+USE D:\BD\PAPELERIAN\IVA SHARED
+SELECT 18
+USE D:\BD\PAPELERIAN\Departamentos_papeleria SHARED
+SELECT 19
+USE D:\BD\PAPELERIAN\periodos_pago SHARED
+SELECT 20 
+USE D:\BD\PAPELERIAN\pape_facturas SHARED 
+SELECT 21
+USE D:\BD\PAPELERIAN\entrada_papeleria SHARED 
+SELECT 22
+USE D:\BD\PAPELERIAN\mensaje SHARED 
+*!*	SELECT 23
+*!*	USE c:\users\sistemasa.oficinas\desktop\ejemplo SHARED 

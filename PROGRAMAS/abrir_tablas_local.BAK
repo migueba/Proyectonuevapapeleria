@@ -1,0 +1,99 @@
+*SET STEP ON 
+SET ENGINEBEHAVIOR 70
+SET REPORTBEHAVIOR 90
+SET DELETED ON
+CLOSE DATABASES ALL
+CLOSE TABLES all
+PUBLIC n_acceso,nombreusuario,nombrecompleto,departamentousuario,depnombre
+
+n_acceso = 2000
+nombreusuario = "ADMINISTRA"
+nombrecompleto = "ADMINISTRADORES"
+departamentousuario = 1
+depnombre = "SISTEMA"
+
+ubi_bdpape = "C:\Proyectonuevapapeleria\BDLOCAL\newpapel"
+OPEN DATABASE ubi_bdpape+'\bdpapeleria.DBC' shared
+
+ubi_bdcomparte = "C:\Proyectonuevapapeleria\BDLOCAL\BDCOMPARTEP"
+OPEN DATABASE ubi_bdcomparte+'\COMPARTIDADB.DBC' SHARED 
+
+ubi_bdsiar = "C:\Proyectonuevapapeleria\BDLOCAL\nsiar"
+OPEN DATABASE ubi_bdsiar+'\siar.dbc' SHARED 
+
+ubi_pagos = "C:\Proyectonuevapapeleria\BDLOCAL\SIAPP"
+OPEN DATABASE ubi_pagos+'\pagos.dbc' SHARED 
+
+&& Tablas de Papeleria &&
+SELECT 1
+USE ubi_bdpape+'\articulos' SHARED
+SELECT 2
+USE ubi_bdpape+'\articulos_requisicion' SHARED
+SELECT 3
+USE ubi_bdpape+'\configuracion' SHARED
+SELECT 4
+USE ubi_bdpape+'\Departamentos_papeleria' SHARED
+SELECT 5
+USE ubi_bdpape+'\Departamentos_usuarios' SHARED
+SELECT 6
+USE ubi_bdpape+'\detalle_cotizacion' SHARED
+SELECT 7
+USE ubi_bdpape+'\entradas' SHARED
+SELECT 8
+USE ubi_bdpape+'\entrada_papeleria' SHARED 
+SELECT 9
+USE ubi_bdpape+'\estado_REQUISICION' SHARED
+SELECT 10
+USE ubi_bdpape+'\IVA' SHARED
+SELECT 11
+USE ubi_bdpape+'\medida' SHARED
+SELECT 12
+USE ubi_bdpape+'\mensaje' SHARED 
+SELECT 13
+USE ubi_bdpape+'\meses' SHARED
+SELECT 14
+USE ubi_bdpape+'\mes_autorizado' SHARED
+SELECT 15
+USE ubi_bdpape+'\observaciones' SHARED
+SELECT 16
+USE ubi_bdpape+'\orden_compra' SHARED
+SELECT 17
+USE ubi_bdpape+'\pape_facturas' SHARED 
+SELECT 18
+USE ubi_bdpape+'\periodos_pago' SHARED
+SELECT 19
+USE ubi_bdpape+'\requisicion' SHARED
+SELECT 20
+USE ubi_bdpape+'\salidas' SHARED
+SELECT 21
+USE ubi_bdpape+'\solicitud' SHARED
+SELECT 22
+USE ubi_bdpape+'\solicitud_detalle' SHARED
+SELECT 23
+USE ubi_bdpape+'\tipo_articulo' SHARED
+SELECT 24
+USE ubi_bdpape+'\solicitud_justificacion.dbf' SHARED 
+SELECT 25
+USE ubi_bdpape+'\solicitud_obs.dbf' SHARED 
+
+&& Tablas de Bdcomparte &&
+SELECT 30
+USE ubi_bdcomparte+'\usuarios' shared
+SELECT 31
+USE ubi_bdcomparte+'\TIPO_DE_CAMBIO' SHARED
+SELECT 32
+USE ubi_bdcomparte+'\departamentos' SHARED
+
+
+&& Tablas de Proveedores &&
+SELECT 35
+USE ubi_bdsiar+'\proveedores' SHARED
+
+
+&& Tablas de SIAPP &&
+SELECT 40
+USE ubi_pagos+'\PASIVOS.DBF' SHARED  
+
+
+
+

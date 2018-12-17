@@ -1,0 +1,103 @@
+*SET STEP ON 
+SET ENGINEBEHAVIOR 70
+SET REPORTBEHAVIOR 90
+CLOSE TABLES all
+SET SAFETY OFF
+CLOSE DATABASES ALL
+PUBLIC n_acceso,nombreusuario,nombrecompleto,departamentousuario,depnombre,idreq_ultima
+
+nombreusuario = "ADMINISTRA"
+nombrecompleto = "ADMINISTRADOR"
+departamentousuario = 1
+depnombre = "SISTEMA"
+
+SET DEFA TO C:\Proyectonuevapapeleria
+SET STATUS BAR ON
+SET SYSMENU on
+SET DATE DMY
+SET CENTURY ON
+SET DELETED ON
+SET ESCAPE off
+SET ENGINEBEHAVIOR 70
+SET REPORTBEHAVIOR 90
+SET OPTIMIZE ON
+
+OPEN DATABASE \\SERVIDORP\proyectos2016$\newpapel\bdpapeleria.DBC shared
+OPEN DATABASE \\SERVIDORP\BDCOMPARTE$\COMPARTIDADB.DBC SHARED 
+OPEN DATABASE \\servidorp\nsiar$\siar.dbc SHARED 
+OPEN DATABASE \\servidorp\SIAPP$\pagos.dbc SHARED 
+
+&& Tablas de Papeleria &&
+SELECT 1
+USE \\SERVIDORP\proyectos2016$\newpapel\articulos SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\articulos_requisicion SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\Departamentos_papeleria SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\Departamentos_usuarios SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\detalle_cotizacion SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\entradas SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\entrada_papeleria SHARED 
+
+USE \\SERVIDORP\proyectos2016$\newpapel\estado_REQUISICION SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\IVA SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\medida SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\mensaje SHARED 
+
+USE \\SERVIDORP\proyectos2016$\newpapel\meses SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\mes_autorizado SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\observaciones SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\orden_compra SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\pape_facturas SHARED 
+
+USE \\SERVIDORP\proyectos2016$\newpapel\periodos_pago SHARED
+
+USE \\SERVIDORP\proyectos2016$\newpapel\requisicion SHARED
+
+
+SELECT 12
+USE \\SERVIDORP\proyectos2016$\newpapel\tipo_articulo SHARED
+SELECT 13
+
+SELECT 14
+
+SELECT 15
+
+SELECT 16 
+
+SELECT 17
+
+SELECT 18
+
+
+
+&& Tablas de Bdcomparte &&
+SELECT 25
+USE \\SERVIDORP\BDCOMPARTE$\usuarios shared
+SELECT 26
+USE \\SERVIDORP\BDCOMPARTE$\TIPO_DE_CAMBIO SHARED
+SELECT 27
+USE \\SERVIDORP\BDCOMPARTE$\departamentos SHARED
+
+
+&& Tablas de Proveedores &&
+SELECT 30
+USE \\servidorp\nsiar$\proveedores SHARED
+
+
+&& Tablas de SIAPP &&
+SELECT 40
+USE \\SERVIDORP\SIAPP$\PASIVOS.DBF SHARED  
+
+
